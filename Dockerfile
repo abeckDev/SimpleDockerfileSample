@@ -17,8 +17,5 @@ EXPOSE 80
 #Copies the content from the dorectory htmlpages into the container image to directory /var/www/htdocs
 COPY htmlpages/ /var/www/html
 
-# Copy the httpd config to the server
-COPY ./WebserverConfig.conf /etc/httpd/conf/httpd.conf
-
 # Uses the default Entrypoin (/bin/sh) and excutes the apache binary to run in Foreground mode
 CMD ["/usr/sbin/httpd", "-f", "/etc/httpd/conf/httpd.conf", "-DFOREGROUND"]
