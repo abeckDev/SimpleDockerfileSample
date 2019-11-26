@@ -15,8 +15,8 @@ RUN yum -y install httpd
 EXPOSE 80
 
 #Copies the content from the dorectory htmlpages into the container image to directory /var/www/htdocs
-COPY htmlpages/ /var/www/htdocs
+COPY htmlpages/ /var/www/html
 
 # Copy the httpd config to the server
-COPY ./WebserverConfig.conf /usr/local/apache2/conf/httpd.conf
+COPY ./WebserverConfig.conf /etc/httpd/conf/httpd.conf
 
